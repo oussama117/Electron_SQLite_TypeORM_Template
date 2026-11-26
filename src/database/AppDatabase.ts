@@ -11,7 +11,6 @@ import {
   AppSettings,
   Languages,
   ErrorObject,
-  Levels
 } from '@/types'
 
 class AppDatabase {
