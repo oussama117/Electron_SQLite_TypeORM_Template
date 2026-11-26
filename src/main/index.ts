@@ -2,12 +2,9 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import AppDatabase from '../database/AppDatabase'
 import databaseHandler from '../database/ipcHandler'
-import { ArduinoBridge } from './hardware/arduinoBridge'
 
 let db: any
-const arduino = new ArduinoBridge()
 
 function createWindow(): void {
   // Create the browser window.
@@ -43,9 +40,6 @@ function createWindow(): void {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 
-  arduino.init(mainWindow).catch((err) => {
-    console.error('Failed to initialize Arduino:', err)
-  })
 }
 
 // This method will be called when Electron has finished

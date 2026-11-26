@@ -7,7 +7,6 @@ export default defineConfig({
   main: {
     resolve: {
       alias: {
-        // This lets your Main process use @/types
         '@': resolve('src')
       }
     }
@@ -16,9 +15,7 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
-        // Keeps your existing renderer alias
         '@renderer': resolve('src/renderer/src'),
-        // FIX: Points @ to the root src so it can find /types
         '@': resolve('src'),
         '@lib': resolve('src/renderer/src/lib')
       }
