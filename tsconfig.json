@@ -1,16 +1,15 @@
 {
   "files": [],
-  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }]
-,"compilerOptions": {
-    "baseUrl": ".",
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.web.json" }],
+  "compilerOptions": {
     "paths": {
-      "@/*": ["src/*"],
-      "@types/*": ["src/types/*"]
+      "@/*": ["./src/*"],
+      "@types/*": ["./src/types/*"]
     },
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "src/**/*" 
+    "src/**/*"
   ]
 }
